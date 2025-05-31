@@ -34,5 +34,10 @@ public class EmployeService {
         jdbc.update(query, employe.getId(), employe.getName(), employe.getAddress());
     }
 
+    //Update employe
+    public void UpdateEmployeeById(Employe UpdateEmp , int id){
+        query = "update employee set id=?, name =?, address=? where id = ?";
+        jdbc.update(query,UpdateEmp.getId(),UpdateEmp.getName(),UpdateEmp.getAddress(),id);
+    }
 
 }

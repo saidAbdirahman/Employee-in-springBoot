@@ -25,4 +25,8 @@ public class EmployeeController {
     public void addEmployee(@RequestBody Employe emp){
          employeService.addEmpliyee(emp);
     }
+    @PatchMapping("/{id}")
+    public void UpdateEmpoloyeeById(@PathVariable int id, @RequestBody Employe emp){
+        employeService.UpdateEmployeeById(emp,id);
+    }
 }
