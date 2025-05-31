@@ -19,6 +19,7 @@ public class EmployeService {
       return jdbc.query(query,new BeanPropertyRowMapper<>(Employe.class));
     };
 
+    //get employee by id
     public Employe getEmployeById(int id){
         query = "select * fro employee where id = ?";
         return jdbc.queryForObject(
@@ -26,6 +27,11 @@ public class EmployeService {
                 new Object[]{id},
                 new BeanPropertyRowMapper<>(Employe.class)
         );
+    }
+    //add employee
+    public void addEmpliyee(Employe employe){
+        query = "insert into employee values (?,?,?)";
+        jdbc.update(query, employe.getId(), employe.getName(), employe.getAddress());
     }
 
 

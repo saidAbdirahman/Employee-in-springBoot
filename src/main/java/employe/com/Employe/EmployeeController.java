@@ -1,8 +1,6 @@
 package employe.com.Employe;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,14 +10,19 @@ public class EmployeeController {
     public EmployeeController(EmployeService employeService){
         this.employeService = employeService;
     }
-
+    //All employee
     @GetMapping("/all")
     public List<Employe> getAllEmployee(){
         return employeService.getAllEmploye();
     }
-
+    //employee by id
     @GetMapping("/{id}")
     public Employe getEmployeById(@PathVariable int id){
         return employeService.getEmployeById(id);
+    }
+    //Insert employee
+    @PostMapping
+    public void addEmployee(@RequestBody Employe emp){
+         employeService.addEmpliyee(emp);
     }
 }
