@@ -19,5 +19,14 @@ public class EmployeService {
       return jdbc.query(query,new BeanPropertyRowMapper<>(Employe.class));
     };
 
+    public Employe getEmployeById(int id){
+        query = "select * fro employee where id = ?";
+        return jdbc.queryForObject(
+                query,
+                new Object[]{id},
+                new BeanPropertyRowMapper<>(Employe.class)
+        );
+    }
+
 
 }
