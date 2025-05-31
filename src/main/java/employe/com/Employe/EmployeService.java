@@ -40,4 +40,10 @@ public class EmployeService {
         jdbc.update(query,UpdateEmp.getId(),UpdateEmp.getName(),UpdateEmp.getAddress(),id);
     }
 
+    //Delete Employee
+    public void DeleteEmployeeById(int id){
+        query = "delete from employee where id =?";
+        jdbc.update(query,id);
+    }
+
 }
