@@ -1,13 +1,13 @@
-package employe.com.Employe;
+package product.com.Product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmployeApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 }

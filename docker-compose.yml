@@ -1,17 +1,17 @@
 version: "3.8"
 services:
   postgres:
-    container_name: postgres
+    container_name: Inventory_postgres
     image: postgres
     restart: always
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: Employee
+      POSTGRES_DB: InventoryDB
     ports:
       - "5432:5432"
   pgadmin:
-    container_name: pgadmin4
+    container_name: Inventory_pgadmin4
     image: dpage/pgadmin4
     restart: always
     environment:
